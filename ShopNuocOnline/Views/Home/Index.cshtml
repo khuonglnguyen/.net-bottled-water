@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="carousel">
+    <img style="width:100%;height:600px" src="~/Assets/images/bg-juiceee.jpg" />
+</div>
+<!-- fashion section start -->
+<div class="fashion_section">
+    <h1 style="text-align: center; font-weight: bold; margin-top: 50px; font-family: 'Arbutus Slab', serif; ">Menu Drinks</h1>
+    <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active mt-5">
+                <div class="container">
+                    <div class="fashion_section_2">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+                                    <div class="tshirt_img"><img src="~/Assets/images/3334.png"></div>
+                                    <p class="price_text font-weight-bold"><span style="color: #262626;">$30</span></p>
+                                    <h4 style="text-align:center">Juice Lemon</h4>
+                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    <div class="btn_main">
+                                        <li>@Html.ActionLink("Xem Chi Tiết", "ChiTiet", "Details", new { area = "" }, new { @class = "nav-link" })</li>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+                                    <div class="tshirt_img"><img src="~/Assets/images/epvag.png"></div>
+                                    <p class="price_text font-weight-bold"><span style="color: #262626;">$30</span></p>
+                                    <h4 style="text-align:center">Juice FullKind</h4>
+                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    <div class="btn_main">
+                                        <li>@Html.ActionLink("Xem Chi Tiết", "ChiTiet1", "Details", new { area = "" }, new { @class = "nav-link" })</li>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+
+                                    <div id="product-3" class="tshirt_img"><img class=" h-full" src="~/Assets/images/img-7.png"></div>
+                                    <p class="price_text font-weight-bold"><span style="color: #262626;">$30</span></p>
+                                    <h4 style="text-align:center">Juice Peach</h4>
+                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    <div class="btn_main">
+                                        <li>@Html.ActionLink("Xem Chi Tiết", "ChiTiet2", "Details", new { area = "" }, new { @class = "nav-link" })</li>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- fashion section end -->
+<!-- electronic section start -->
+<div class="fashion_section">
+    <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <h1 style="color:red" class="fashion_taital">Items List</h1>
+                    <div class="fashion_section_2">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+                                    <div class="electronic_img"><img src="~/Assets/images/milktea-1.png"></div>
+                                    <h4 class="shirt_text text-center ">MilkTea Redbean</h4>
+                                    <p class="price_text font-weight-bold">Price <span style="color: #262626;">$100</span></p>
+                                    <div class="btn_main">
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                        <div class="seemore_bt"><a href="#">See More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+                                    <div class="electronic_img"><img src="~/Assets/images/hightland.png"></div>
+                                    <h4 class="shirt_text text-center font-weight-bold">Higlands Peach</h4>
+                                    <p class="price_text font-weight-bold">Price  <span style="color: #262626;">$ 100</span></p>
+                                    <div class="btn_main">
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                        <div class="seemore_bt"><a href="#">See More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+                                    <div class="electronic_img"><img src="~/Assets/images/soda.png"></div>
+                                    <h4 class="shirt_text text-center font-weight-bold">Blueberry</h4>
+                                    <p class="price_text font-weight-bold">Price  <span style="color: #262626;">$ 100</span></p>
+                                    <div class="btn_main">
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                        <div class="seemore_bt"><a href="#">See More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="fashion_section_2">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+                                    <h4 class="shirt_text">MilkTea Special</h4>
+                                    <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                    <div class="electronic_img"><img src="/Assets/images/laptop-img.png"></div>
+                                    <div class="btn_main">
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                        <div class="seemore_bt"><a href="#">See More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+                                    <h4 class="shirt_text">Mobile</h4>
+                                    <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                    <div class="electronic_img"><img src="/Assests/images/mobile-img.png"></div>
+                                    <div class="btn_main">
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                        <div class="seemore_bt"><a href="#">See More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="box_main">
+                                    <h4 class="shirt_text">Computers</h4>
+                                    <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                    <div class="electronic_img"><img src="/Assets/images/computer-img.png"></div>
+                                    <div class="btn_main">
+                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                        <div class="seemore_bt"><a href="#">See More</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*banner *@
+<img style="width:100%" src="~/Assets/images/bannercaffe-3.jpg" />
+<img style="width:100%" src="~/Assets/images/bannercafffe.png" />
+<img style="width:100%" src="~/Assets/images/banner_caaffee_2.jpg" />
+@*end banne*@
+<div style="background-color:cornsilk;padding:20px" class="introduce container d-flex">
+    <div class="introduce_left mr-5 mt-5 ">
+        <img style="border-radius:10px" src="~/Assets/images/higland banner.jpg" />
+    </div>
+    <div class="introduce_right ">
+        <h1>TIN TỨC MỚI NHẤT</h1>
+        <div class="list_info ">
+            <div class="item_info d-flex mb-3">
+                <img src="~/Assets/images/info_2.png" />
+                <div class="pl-3">
+                    <h4>MẠNH MẼ LÀM ĐIỀU MÌNH YÊU!</h4>
+                    <p><i class="fa-regular fa-calendar-days pr-2"></i>06/03/2023</p>
+                </div>
+                
+            </div>
+            <div class="item_info d-flex mb-3">
+                <img src="~/Assets/images/info_3.png" />
+                <div  class="pl-3">
+                    <h4>APP NÀY LÀ CỦA CHÚNG MÌNH!</h4>
+                    <p><i class="fa-regular fa-calendar-days pr-2"></i>10/01/2023</p>
+                </div>
+               
+            </div>
+            <div class="item_info d-flex ">
+                <img src="~/Assets//images/info_1.jpg" />
+                <div  class="pl-3">
+                    <h4>ĐÓN TẾT NÀY THẬT KHÁC LẠ TẠI HIGHTLANDS</h4>
+                    <p><i class="fa-regular fa-calendar-days pr-2"></i>28/12/2023</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <style>
+        .list_info img{
+            width:100px;
+            height:100px;
+        }
+    </style>
+</div>
+<!-- electronic section end -->

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Shop Drinks Online</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/Assets/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/Assets/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/Assets/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="/Assets/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/Assets/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  -->
+    <!-- owl stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesoeet" href="css/owl.theme.default.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Arbutus+Slab&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn/Assets.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <style>
+        .navbar-nav li{
+            color:white
+        }
+    </style>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark position-fixed" style="z-index:999;width:100%" >
+        <div class="container">
+            <a href="/">
+                <img style="object-fit:cover;height:auto;width:100px" src="~/Assets/images/logohighland.png" />
+            </a>
+               
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1 ">
+                    <li>@Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Thực Đơn", "ThucDon", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Tin Tức", "TinTuc", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Danh Sách Nước", "ListWater", "Water", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+            <li>
+                <a href="#">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span class="padding_10">Cart</span>
+                </a>
+            </li>
+        </div>
+    </nav>
+    <div class=" body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="footer_section layout_padding">
+                <div class="container">
+                    <div class="icon" style="margin-left:42%;font-size:40px">
+                        <a target="_blank" style="color:cornflowerblue" id="facebook" href="https://www.facebook.com/profile.php?id=100024636332556"><i class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank" style="color:deeppink" id="ig" href="https://www.instagram.com/__nc03_/"><i class="fa-brands fa-instagram"></i></a>
+                        <i style="color:deepskyblue" class="fa-brands fa-twitter"></i>
+                        <i style="color:darkgray" class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="footer_menu">
+                        <ul>
+                            <li><a href="#">Best Sellers</a></li>
+                            <li><a href="#">Gift</a></li>
+                            <li><a href="#">New Products</a></li>
+                            <li><a href="#">Today's Sale</a></li>
+                            <li><a href="#">Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="location_main">Phone Number : <a href="#">(+84) 839170198</a></div>
+                    <span style="margin-left:30%;color:white;font-weight:bold">Địa Chỉ:<a target="_blank" style="color:white" href="https://goo.gl/maps/HncnS1df2b7CkD7v9">168/38B Nguyễn Gia Trí,p.25,Bình Thạnh,TP.HCM</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

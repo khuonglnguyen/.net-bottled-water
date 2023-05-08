@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "ThucDon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    img{
+        width:100%;
+        height:400px;
+        
+    }
+    .list_item{
+        display:grid;
+        grid-template-columns:auto auto auto;
+        gap:10px;
+    }
+    .product_info{
+        text-align:center;
+    }
+    .product_info p{
+        font-size:20px;
+        font-weight:350;
+    }
+</style>
+<div style="background-color:antiquewhite" class="container">
+    <h2 style="margin:100px 0px 0px 0px" class="text-center">HIGHLANDS COFFEE</h2>
+    <div class="list_item">
+        @*-----Sản Phẩm 1-----*@
+        <div class="product">
+            <div class="product_img">
+                <img src="~/Assets/images/hightland.png" />
+            </div>
+            <div class="product_info ">
+                <h3>Trà Đào Sữa</h3>
+                <p>Giá:45.000đ</p>
+            </div>
+        </div>
+        @*-----Sản Phẩm 2-----*@
+        <div class="product">
+            <div class="product_img">
+                <img src="~/Assets/images/kemsssua.png" />
+            </div>
+            <div class="product_info">
+                <h3>Caramel Phin</h3>
+                <p>Giá:65.000đ</p>
+            </div>
+        </div>
+        @*-----Sản Phẩm 3-----*@
+        <div class="product">
+            <div class="product_img">
+                <img src="~/Assets/images/phidin_kemsua.png" />
+            </div>
+            <div class="product_info">
+                <h3>PhiDi Hạnh Nhân</h3>
+                <p>Giá:55.000đ</p>
+            </div>
+        </div>
+        @*-----Sản Phẩm 4-----*@
+        <div class="product">
+            <div class="product_img">
+                <img src="~/Assets/images/cafesuas.png" />
+            </div>
+            <div class="product_info">
+                <h3>Cà Phê Sữa</h3>
+                <p>Giá:35.000đ</p>
+            </div>
+        </div>
+        @*-----Sản Phẩm 5-----*@
+        <div class="product">
+            <div class="product_img">
+                <img src="~/Assets/images/cookie_scream.png" />
+            </div>
+            <div class="product_info">
+                <h3>Cookie & Scream</h3>
+                <p>Giá:69.000đ</p>
+            </div>
+        </div>
+        @*-----Sản Phẩm 6-----*@
+        <div class="product" >
+            <div class="product_img">
+                <img src="~/Assets/images/phidinhongtra.png" />
+            </div>
+            <div class="product_info">
+                <h3>Trà Sen Vàng</h3>
+                <p>Giá:45.000đ</p>
+            </div>
+        </div>
+    </div>
+</div>
+
