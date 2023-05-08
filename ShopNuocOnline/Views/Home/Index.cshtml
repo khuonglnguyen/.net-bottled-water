@@ -22,7 +22,7 @@
                                         <div class="tshirt_img"><img src="@item.Image" style="height: 300px"></div>
                                         <p class="price_text font-weight-bold"><span style="color: #262626;">$@item.ProductPrice</span></p>
                                         <h4 style="text-align:center">@item.Name</h4>
-                                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                        <div class="buy_bt"><a href="/Cart/AddItem?id=@item.Id">Thêm vào giỏ</a></div>
                                         <div class="btn_main">
                                             @Html.ActionLink("Xem Chi Tiết", "ChiTiet1", "Details", new { id = item.Id }, new { @class = "nav-link" })
                                         </div>

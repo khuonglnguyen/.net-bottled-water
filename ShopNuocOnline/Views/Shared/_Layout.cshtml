@@ -48,16 +48,16 @@
 </head>
 <body>
     <style>
-        .navbar-nav li{
-            color:white
+        .navbar-nav li {
+            color: white
         }
     </style>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark position-fixed" style="z-index:999;width:100%" >
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark position-fixed" style="z-index:999;width:100%">
         <div class="container">
             <a href="/">
                 <img style="object-fit:cover;height:auto;width:100px" src="~/Assets/images/logohighland.png" />
             </a>
-               
+
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -74,7 +74,19 @@
             <li>
                 <a href="#">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span class="padding_10">Cart</span>
+                    @{
+                        var carts = Session["Cart"] as List<ShopNuocOnline.Models.Cart>;
+                        var total = 0;
+                        if (carts != null)
+                        {
+                            total = carts.Sum(x => x.Qty);
+                        }
+                        else
+                        {
+                            total = 0;
+                        }
+                    }
+                    <span class="padding_10">Cart (@total)</span>
                 </a>
             </li>
         </div>
