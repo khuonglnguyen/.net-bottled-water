@@ -1,4 +1,6 @@
-﻿using ShopNuocOnline.Models;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.Owin.BuilderProperties;
+using ShopNuocOnline.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +63,34 @@ namespace ShopNuocOnline.Controllers
             carts.Remove(item);
             Session["Cart"] = carts;
             return Redirect("/Cart");
+        }
+
+        public ActionResult AddOrder(string address, string description)
+        {
+            var order = new Order();
+            order.UserId = User.Identity.GetUserId();
+            order.Address = address;
+            order.Description = description;
+            order.OrderDate = DateTime.Now;
+
+            db.Orders.Add(order);
+            db.SaveChanges();
+
+            var carts = Session["Cart"] as List<Cart>;
+            foreach (var item in carts)
+            {
+                var detail = new OrderDetail();
+                detail.ProductId = item.Id;
+                detail.OrderId = order.Id;
+                detail.ProductPrice = item.Price;
+                detail.Quantity = item.Qty;
+
+                db.OrderDetails.Add(detail);
+            }
+            db.SaveChanges();
+            Session["Cart"] = null;
+
+            return Redirect("/Cart?success=true");
         }
     }
 }

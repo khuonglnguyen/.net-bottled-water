@@ -12,7 +12,7 @@ namespace ShopNuocOnline.Models
 
         [Required]
         [StringLength(50)]
-        public string CustomersId { get; set; }
+        public string UserId { get; set; }
 
         public DateTime OrderDate { get; set; }
 

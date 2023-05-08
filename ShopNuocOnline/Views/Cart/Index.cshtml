@@ -3,11 +3,18 @@
     ViewBag.Title = "Cart";
     Layout = "~/Views/Shared/_Layout.cshtml";
     int count = 1;
+    double total = 0;
 }
 
-<h2>Cart</h2>
 <div class="container m-5">
-    @if (Model != null && Model.Count > 0)
+    <h2 style="margin-top: 150px">Giỏ hàng</h2>
+    @if (Request.QueryString["success"] == "true")
+    {
+        <h2>
+            Đặt hàng thành công
+        </h2>
+    }
+    else if (Model != null && Model.Count > 0)
     {
         <table class="table">
             <thead>
@@ -23,10 +30,11 @@
             <tbody>
                 @foreach (var item in Model)
                 {
+                    total += item.Qty * item.Price;
                     <tr>
                         <th scope="row">@(count++)</th>
                         <td>@item.Name</td>
-                        <td><img src="@item.Image" style="height: 100px"/></td>
+                        <td><img src="@item.Image" style="height: 100px" /></td>
                         <td>$@item.Price</td>
                         <td>@item.Qty</td>
                         <td><a href="/Cart/RemoveItem/@item.Id">Xóa</a></td>
@@ -34,11 +42,42 @@
                 }
             </tbody>
         </table>
+        if (User.Identity.IsAuthenticated)
+        {
+            <h2>
+                Thông tin đặt hàng
+            </h2>
+            <form class="right" action="/Cart/AddOrder" method="post">
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input class="form-control" required name="address" />
+                </div>
+                <div class="form-group">
+                    <label>Ghi chú</label>
+                    <input class="form-control" required name="description" />
+                </div>
+                <div class="form-group">
+                    <label>Tổng</label>
+                    <b>$@total</b>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Đặt hàng</button>
+                </div>
+            </form>
+        }
+        else
+        {
+            <h2>
+                Đăng nhập để đặt hàng
+            </h2>
+            <a href="/Account/Login">Đăng nhập</a>
+        }
     }
     else
     {
         <h2>
             Giỏ hàng hiện đang rỗng...
-        </h2>}
+        </h2>
+    }
 
 </div>
