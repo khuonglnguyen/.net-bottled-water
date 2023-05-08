@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopNuocOnline.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,14 +9,16 @@ namespace ShopNuocOnline.Controllers
 {
     public class DetailsController : Controller
     {
+        Model1 db = new Model1();
         // GET: Details
         public ActionResult ChiTiet()
         {
             return View();
         }
-        public ActionResult ChiTiet1()
+        public ActionResult ChiTiet1(int id)
         {
-            return View();
+            var product = db.Products.Find(id);
+            return View(product);
         }
         public ActionResult ChiTiet2()
         {

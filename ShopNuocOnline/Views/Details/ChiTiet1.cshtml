@@ -1,4 +1,4 @@
-﻿
+﻿@model ShopNuocOnline.Models.Product
 @{
     ViewBag.Title = "ChiTiet1";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,19 +8,18 @@
 
     <div class="col-4 pt-5">
 
-        <img style="width:300px;height:300px" class="card-img-top" src="~/Assets//images/epvag.png" alt="Card image cap">
+        <img style="width:300px;height:300px" class="card-img-top" src="@Model.Image" alt="Card image cap">
     </div>
     <div style="margin-top:100px" class="content col-8 ">
-        <h2 class="card-title text-center">Juice FullKind</h2>
+        <h2 class="card-title text-center">@Model.Name</h2>
         <p class="font-italic" style="font-size:20px">
-            Nước ép hoa quả hay nước ép trái cây là thức uống quen thuộc, thậm chí, với nhiều người, đây còn là một phần không thể thiếu trong thực đơn mỗi ngày. Thế nhưng, cũng chính sự quen thuộc, phổ biến và “ỷ y” là có lợi cho sức khỏe mà chúng ta đôi khi quên mất rằng nếu uống sai cách thì lợi có thể biến thành hại.
-
-            Bài viết sau Hello Bacsi sẽ cung cấp cho bạn một số thông tin xoay quanh việc uống nước ép trái cây đúng cách, đồng thời giải đáp một số băn khoăn thường gặp như có nên uống nước ép trái cây vào buổi tối, uống nước ép trái cây mỗi ngày có tốt không, đâu là các loại nước ép trái cây tốt cho sức khỏe…
+            @Model.Description
         </p>
+        <h4>Giá: $@Model.ProductPrice</h4>
         <div class="d-flex">
-            <button class="btn btn-danger">-</button>
-            <p style="font-size:20px" class="border-2 text-center d-flex justify-content-center align-items-center mt-2 font-weight-bold" style="width:30px;height:30px;">6</p>
-            <button class="btn btn-warning">+</button>
+            <button class="btn btn-danger" onclick="giam()">-</button>
+            <p style="font-size:20px" id="qty" class="border-2 text-center d-flex justify-content-center align-items-center mt-2 font-weight-bold" style="width:30px;height:30px;">1</p>
+            <button class="btn btn-warning" onclick="tang()">+</button>
             <button style="margin-left:40px;font-size:20px;padding:10px 60px;background-color:orange;margin-top:10px;border-radius:15px">Mua Ngay</button>
 
         </div>
@@ -29,3 +28,16 @@
     </div>
 
 </div>
+<script>
+    function tang() {
+        const qty = document.getElementById('qty');
+        qty.innerHTML = Number(qty.innerHTML) + 1;
+    }
+    function giam() {
+        const qty = document.getElementById('qty');
+        if (qty.innerHTML == 1) {
+            return;
+        }
+        qty.innerHTML = Number(qty.innerHTML) - 1;
+    }
+</script>
