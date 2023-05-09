@@ -11,9 +11,9 @@ namespace ShopNuocOnline.Controllers
     {
         Model1 db = new Model1();
         public ActionResult Index()
-           
+
         {
-            var listProduct = db.Products.ToList();
+            var listProduct = db.Products.Where(x => x.IsActive).ToList();
             return View(listProduct);
         }
 

@@ -30,5 +30,6 @@ namespace ShopNuocOnline.Models
         public int CategoryId { get; set; }
 
         public int Quantity { get; set; }
+        public bool IsActive { get; set; }
     }
 }

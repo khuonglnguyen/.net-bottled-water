@@ -2177,6 +2177,8 @@
     <Content Include="Areas\Admin\Assets\vendor\jquery\jquery.min.map" />
     <Content Include="Areas\Admin\Assets\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2231,7 +2233,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Products\" />
     <Folder Include="Areas\Admin\Views\User\" />
   </ItemGroup>
   <ItemGroup>

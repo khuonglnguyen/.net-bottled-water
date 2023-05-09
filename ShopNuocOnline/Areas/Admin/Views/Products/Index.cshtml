@@ -1,0 +1,49 @@
+﻿@model List<ShopNuocOnline.Models.Product>
+@{
+    ViewBag.Title = "Danh sách sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    int count = 1;
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Danh sách sản phẩm</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Mã SP</th>
+                            <th>Hình Ảnh</th>
+                            <th>Đơn giá</th>
+                            <th>Ngày tạo</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@(count++)</td>
+                                <td>@item.Name</td>
+                                <td><img src="@item.Image" style="height: 100px"/></td>
+                                <td>$@item.ProductPrice</td>
+                                <td>@item.ProductDate</td>
+                                <td>
+                                    <button class="btn btn-primary" onclick="location = '/Admin/Products/Edit/@item.Id'">Chi tiết/Sửa</button>
+                                    <button class="btn btn-danger" onclick="location = '/Admin/Products/Delete/@item.Id'">Xóa</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
