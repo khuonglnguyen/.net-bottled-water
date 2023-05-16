@@ -77,7 +77,7 @@ namespace ShopNuocOnline.Controllers
             db.SaveChanges();
 
             var carts = Session["Cart"] as List<Cart>;
-            int qty = 0;
+            double total = 0;
             foreach (var item in carts)
             {
                 var detail = new OrderDetail();
@@ -85,14 +85,13 @@ namespace ShopNuocOnline.Controllers
                 detail.OrderId = order.Id;
                 detail.ProductPrice = item.Price;
                 detail.Quantity = item.Qty;
-                qty += item.Qty;
+                total += item.Qty * item.Price;
 
                 db.OrderDetails.Add(detail);
             }
             db.SaveChanges();
 
-            var orderUpdate = db.Orders.LastOrDefault();
-            orderUpdate.Quantity = qty;
+            order.Total = (decimal)total;
             db.SaveChanges();
 
             Session["Cart"] = null;

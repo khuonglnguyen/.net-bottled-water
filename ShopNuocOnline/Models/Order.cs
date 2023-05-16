@@ -24,6 +24,6 @@ namespace ShopNuocOnline.Models
         [StringLength(50)]
         public string Description { get; set; }
 
-        public int Quantity { get; set; }
+        public decimal Total { get; set; }
     }
 }
